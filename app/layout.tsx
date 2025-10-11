@@ -7,9 +7,9 @@ import "./globals.css"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "Daniel Austen | Software Engineering Student",
+  title: "Daniel Austen | Full-Stack Developer",
   description:
-    "Final year software engineering student and full-stack developer passionate about building scalable web applications. Currently seeking full-time opportunities.",
+    "Full-stack developer passionate about building scalable web applications. Currently seeking full-time opportunities.",
   keywords: [
     "Daniel Austen",
     "Software Engineer",
@@ -21,12 +21,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Daniel Austen" }],
   openGraph: {
-    title: "Daniel Austen | Software Engineering Student",
+    title: "Daniel Austen | Full-Stack Developer",
     description:
-      "Final year software engineering student and full-stack developer passionate about building scalable web applications.",
+      "Full-stack developer passionate about building scalable web applications.",
     type: "website",
   },
-  generator: "v0.app",
 }
 
 export default function RootLayout({

@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, ArrowDown } from "lucide-react"
 import { TechBadge } from "./tech-badge"
 import { useEffect, useState } from "react"
 
-const techStack = ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"]
+const techStack = ["Next.js", "React", "TypeScript", "JavaScript", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"]
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -56,7 +56,7 @@ export function Hero() {
               <div className="absolute -inset-1 bg-gradient-to-r from-accent via-primary to-accent rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 animate-gradient" />
               <div className="relative">
                 <img
-                  src="/professional-developer-portrait.png"
+                  src="/Kami.jpeg"
                   alt="Daniel Austen"
                   className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-background shadow-2xl"
                 />
@@ -74,7 +74,7 @@ export function Hero() {
               </div>
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
                 <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground text-balance">
-                  Final Year Software Engineering Student | Full-Stack Developer
+                  Full-Stack Developer
                 </p>
               </div>
             </div>
