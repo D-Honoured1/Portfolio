@@ -9,12 +9,11 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Daniel Austen. All rights reserved.
             </p>
-            <p className="text-xs text-muted-foreground mt-1">Built with Next.js & Tailwind CSS</p>
           </div>
 
           <div className="flex gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/D-Honoured1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
@@ -23,7 +22,7 @@ export function Footer() {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/D-Honoured1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
@@ -32,7 +31,7 @@ export function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:daniel@example.com"
+              href="mailto:temifeausten@gmail.com"
               className="text-muted-foreground hover:text-accent transition-colors"
               aria-label="Email"
             >
