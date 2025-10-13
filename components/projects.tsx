@@ -14,8 +14,8 @@ const projects = [
       "A full-stack SaaS platform with integrated payment processing, user authentication, and real-time data synchronization. Built with modern web technologies for optimal performance.",
     image: "/modern-saas-dashboard.png",
     tech: ["Next.js", "TypeScript", "Supabase", "Stripe", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/D-honoured1/Kamisoft",
+    demo: "https://kamisoftenterprises.online",
   },
   {
     title: "Drive Clone",
@@ -23,8 +23,7 @@ const projects = [
       "A secure file storage application featuring user authentication, file upload/download, folder organization, and sharing capabilities. Implements best practices for data security.",
     image: "/file-storage-cloud-drive-interface.jpg",
     tech: ["React", "Node.js", "PostgreSQL", "Supabase Auth", "Express"],
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/D-Honoured1/drive",
   },
   {
     title: "E-Commerce Platform",
@@ -32,8 +31,8 @@ const projects = [
       "A modern online store with product catalog, shopping cart, checkout flow, and payment integration. Features responsive design and optimized performance.",
     image: "/modern-ecommerce-interface.png",
     tech: ["Next.js", "TypeScript", "Prisma", "Paystack", "Radix UI"],
-    github: "https://github.com",
-    demo: null,
+    github: "https://github.com/D-honoured1/KamiStyles",
+    demo: "https://kamistyles.vercel.app",
     comingSoon: true,
   },
 ]
