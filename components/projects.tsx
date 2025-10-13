@@ -32,7 +32,7 @@ const projects = [
     image: "/modern-ecommerce-interface.png",
     tech: ["Next.js", "TypeScript", "Prisma", "Paystack", "Radix UI"],
     github: "https://github.com/D-honoured1/KamiStyles",
-    demo: "https://kamistyles.vercel.app",
+    demo: "https://kami-styles.vercel.app",
   },
 ]
 
