@@ -161,13 +161,13 @@ export function Projects() {
             {/* Carousel Container */}
             <div
               ref={carouselRef}
-              className="overflow-hidden"
+              className="overflow-hidden px-4 md:px-0"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             >
               <div
-                className="flex transition-transform duration-500 ease-out gap-8"
+                className="flex transition-transform duration-500 ease-out gap-4 md:gap-8"
                 style={{
                   transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
                 }}
