@@ -3,6 +3,7 @@ import { Button } from "./ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import { TechBadge } from "./tech-badge"
 import Image from "next/image"
+import { DynamicProjectImage } from "./dynamic-project-image"
 
 interface ProjectCardProps {
   title: string
@@ -22,12 +23,16 @@ export function ProjectCard({ title, description, image, tech, github, demo, com
     <Card className="group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 hover:border-accent/50 hover:-translate-y-2 hover:scale-[1.02] glass-effect h-full">
       <CardHeader className="p-0">
         <div className="relative aspect-video overflow-hidden bg-muted">
-          <Image
-            src={projectImage || "/placeholder.svg"}
-            alt={title}
-            fill
-            className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
-          />
+          {demo ? (
+            <DynamicProjectImage demoUrl={demo} fallbackImage={projectImage} title={title} />
+          ) : (
+            <Image
+              src={projectImage || "/placeholder.svg"}
+              alt={title}
+              fill
+              className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           {comingSoon && (
             <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium glow-accent animate-pulse">
