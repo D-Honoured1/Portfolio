@@ -2,12 +2,10 @@
 
 import { TechBadge } from "./tech-badge"
 import { useEffect, useRef, useState } from "react"
+import skillsData from "@/data/skills.json"
+import profileData from "@/data/profile.json"
 
-const skills = {
-  Frontend: ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS", "Radix UI"],
-  Backend: ["Node.js", "Express", "Supabase", "PostgreSQL", "Prisma"],
-  "Tools & Others": ["Git", "Vercel", "Stripe", "Paystack", "Authentication", "REST APIs"],
-}
+const skills = skillsData.categories
 
 export function About() {
   const [isVisible, setIsVisible] = useState(false)
@@ -46,10 +44,7 @@ export function About() {
               About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed glass-effect p-6 rounded-lg">
-              I'm a full-stack developer with a passion for building scalable web applications. My
-              experience spans full-stack development, from crafting intuitive user interfaces to designing robust
-              backend systems. I thrive on solving complex problems and continuously learning new technologies to
-              deliver high-quality software solutions.
+              {profileData.about}
             </p>
           </div>
 

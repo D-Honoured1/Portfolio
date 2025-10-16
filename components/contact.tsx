@@ -3,6 +3,7 @@
 import { Button } from "./ui/button"
 import { Github, Linkedin, Mail, Sparkles } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import profileData from "@/data/profile.json"
 
 export function Contact() {
   const [isVisible, setIsVisible] = useState(false)
@@ -41,8 +42,7 @@ export function Contact() {
               Let's Work <span className="gradient-text">Together</span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I'm currently open to full-time opportunities and freelance projects. Feel free to reach out if you'd like
-              to collaborate or just want to connect!
+              {profileData.availability.message}
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export function Contact() {
               asChild
               className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto glow-accent hover:scale-105 transition-all duration-300"
             >
-              <a href="mailto:daniel@example.com">
+              <a href={`mailto:${profileData.email}`}>
                 <Mail className="h-5 w-5 mr-2" />
                 Send Email
               </a>
@@ -67,7 +67,7 @@ export function Contact() {
               asChild
               className="w-full sm:w-auto glass-effect hover:border-accent/50 hover:scale-105 transition-all duration-300 bg-transparent"
             >
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href={profileData.github} target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5 mr-2" />
                 GitHub
               </a>
@@ -78,7 +78,7 @@ export function Contact() {
               asChild
               className="w-full sm:w-auto glass-effect hover:border-accent/50 hover:scale-105 transition-all duration-300 bg-transparent"
             >
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href={profileData.linkedin} target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5 mr-2" />
                 LinkedIn
               </a>
@@ -92,7 +92,7 @@ export function Contact() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-accent/30 glow-accent">
               <Sparkles className="h-4 w-4 text-accent animate-pulse" />
-              <p className="text-accent font-medium">Open to opportunities</p>
+              <p className="text-accent font-medium">{profileData.availability.status}</p>
             </div>
           </div>
         </div>

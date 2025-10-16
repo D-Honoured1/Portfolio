@@ -6,54 +6,19 @@ import { ProjectCard } from "./project-card"
 import { useEffect, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "./ui/button"
+import projectsData from "@/data/projects.json"
 
-const projects = [
-  {
-    title: "Kamisoft Platform",
-    description:
-      "A full-stack SaaS platform with integrated payment processing, user authentication, and real-time data synchronization. Built with modern web technologies for optimal performance.",
-    image: "/modern-saas-dashboard.png",
-    tech: ["Next.js", "TypeScript", "Supabase", "Stripe", "Tailwind CSS"],
-    github: "https://github.com/D-honoured1/Kamisoft",
-    demo: "https://kamisoftenterprises.online",
-  },
-  {
-    title: "Content Management System",
-    description:
-      "A full-featured CMS platform for creating, managing, and publishing content. Includes user authentication, rich text editing, media management, and role-based access control.",
-    image: "/cms-dashboard.png",
-    tech: ["Remix", "TypeScript", "Prisma", "PostgreSQL", "Supabase", "Tailwind CSS"],
-    github: "https://github.com/D-Honoured1/CMS",
-    demo: "https://cms-flax-sigma.vercel.app/",
-  },
-  {
-    title: "Drive Clone",
-    description:
-      "A secure file storage application featuring user authentication, file upload/download, folder organization, and sharing capabilities. Implements best practices for data security.",
-    image: "/file-storage-cloud-drive-interface.jpg",
-    tech: ["React", "Node.js", "PostgreSQL", "Supabase Auth", "Express"],
-    github: "https://github.com/D-Honoured1/drive",
-    demo: null,
-  },
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A modern online store with product catalog, shopping cart, checkout flow, and payment integration. Features responsive design and optimized performance.",
-    image: "/modern-ecommerce-interface.png",
-    tech: ["Next.js", "TypeScript", "Prisma", "Paystack", "Radix UI"],
-    github: "https://github.com/D-honoured1/KamiStyles",
-    demo: "https://kami-styles.vercel.app",
-  },
-]
+const projects = projectsData
 
 export function Projects() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(projects.length) // Start at middle set
   const [itemsPerView, setItemsPerView] = useState(1)
   const carouselRef = useRef<HTMLDivElement>(null)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(true)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -88,14 +53,38 @@ export function Projects() {
     return () => window.removeEventListener("resize", updateItemsPerView)
   }, [])
 
+  // Create infinite loop by duplicating projects
+  const infiniteProjects = [...projects, ...projects, ...projects]
   const maxIndex = Math.max(0, projects.length - itemsPerView)
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
+    setCurrentIndex((prev) => {
+      const nextIndex = prev + 1
+      // Reset to beginning when reaching the end of second set
+      if (nextIndex >= projects.length * 2) {
+        setTimeout(() => {
+          setIsTransitioning(false)
+          setCurrentIndex(projects.length)
+          setTimeout(() => setIsTransitioning(true), 50)
+        }, 500)
+      }
+      return nextIndex
+    })
   }
 
   const goToPrev = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
+    setCurrentIndex((prev) => {
+      const prevIndex = prev - 1
+      // Jump to end of second set when going before first set
+      if (prevIndex < projects.length) {
+        setTimeout(() => {
+          setIsTransitioning(false)
+          setCurrentIndex(projects.length * 2 - 1)
+          setTimeout(() => setIsTransitioning(true), 50)
+        }, 500)
+      }
+      return prevIndex
+    })
   }
 
   const goToSlide = (index: number) => {
@@ -177,20 +166,20 @@ export function Projects() {
               onTouchEnd={handleTouchEnd}
             >
               <div
-                className="flex transition-transform duration-500 ease-out gap-4 md:gap-8"
+                className={`flex gap-4 md:gap-8 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
                 style={{
                   transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
                 }}
               >
-                {projects.map((project, index) => (
+                {infiniteProjects.map((project, index) => (
                   <div
-                    key={project.title}
+                    key={`${project.title}-${index}`}
                     className={`flex-shrink-0 transition-all duration-700 ${
                       isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
                     style={{
                       width: `calc(${100 / itemsPerView}% - ${((itemsPerView - 1) * 32) / itemsPerView}px)`,
-                      transitionDelay: `${200 + index * 150}ms`,
+                      transitionDelay: `${200 + (index % projects.length) * 150}ms`,
                     }}
                   >
                     <ProjectCard {...project} />
@@ -201,18 +190,21 @@ export function Projects() {
 
             {/* Carousel Dots */}
             <div className="flex justify-center gap-2 mt-8">
-              {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? "w-8 bg-accent glow-accent"
-                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+              {Array.from({ length: maxIndex + 1 }).map((_, index) => {
+                const normalizedIndex = currentIndex % projects.length
+                return (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(projects.length + index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === normalizedIndex
+                        ? "w-8 bg-accent glow-accent"
+                        : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                )
+              })}
             </div>
           </div>
         </div>

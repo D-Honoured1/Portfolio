@@ -1,0 +1,14 @@
+{
+  "name": "Daniel Austen",
+  "title": "Full-Stack Developer",
+  "bio": "I'm passionate about building scalable, production-ready web applications that solve real-world problems. Currently seeking full-time opportunities to contribute to innovative teams and create impactful software solutions.",
+  "about": "I'm a full-stack developer with a passion for building scalable web applications. My experience spans full-stack development, from crafting intuitive user interfaces to designing robust backend systems. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality software solutions.",
+  "image": "/Kami.jpeg",
+  "email": "temifeausten@gmail.com",
+  "github": "https://github.com/D-Honoured1",
+  "linkedin": "https://linkedin.com/in/D-Honoured1",
+  "availability": {
+    "status": "Open to opportunities",
+    "message": "I'm currently open to full-time opportunities and freelance projects. Feel free to reach out if you'd like to collaborate or just want to connect!"
+  }
+}

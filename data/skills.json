@@ -1,0 +1,37 @@
+{
+  "techStack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "PostgreSQL",
+    "Supabase",
+    "Tailwind CSS"
+  ],
+  "categories": {
+    "Frontend": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Radix UI"
+    ],
+    "Backend": [
+      "Node.js",
+      "Express",
+      "Supabase",
+      "PostgreSQL",
+      "Prisma"
+    ],
+    "Tools & Others": [
+      "Git",
+      "Vercel",
+      "Stripe",
+      "Paystack",
+      "Authentication",
+      "REST APIs"
+    ]
+  }
+}

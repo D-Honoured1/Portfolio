@@ -4,8 +4,10 @@ import { Button } from "./ui/button"
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react"
 import { TechBadge } from "./tech-badge"
 import { useEffect, useState } from "react"
+import profileData from "@/data/profile.json"
+import skillsData from "@/data/skills.json"
 
-const techStack = ["Next.js", "React", "TypeScript", "JavaScript", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"]
+const techStack = skillsData.techStack
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -56,8 +58,8 @@ export function Hero() {
               <div className="absolute -inset-1 bg-gradient-to-r from-accent via-primary to-accent rounded-full blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 animate-gradient" />
               <div className="relative">
                 <img
-                  src="/Kami.jpeg"
-                  alt="Daniel Austen"
+                  src={profileData.image}
+                  alt={profileData.name}
                   className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-background shadow-2xl"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/20 to-transparent" />
@@ -69,21 +71,19 @@ export function Hero() {
             <div className="space-y-4">
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance">
-                  Hi, I'm <span className="gradient-text animate-gradient inline-block">Daniel Austen</span>
+                  Hi, I'm <span className="gradient-text animate-gradient inline-block">{profileData.name}</span>
                 </h1>
               </div>
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
                 <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground text-balance">
-                  Full-Stack Developer
+                  {profileData.title}
                 </p>
               </div>
             </div>
 
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
               <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                I'm passionate about building scalable, production-ready web applications that solve real-world
-                problems. Currently seeking full-time opportunities to contribute to innovative teams and create
-                impactful software solutions.
+                {profileData.bio}
               </p>
             </div>
 
@@ -119,7 +119,7 @@ export function Hero() {
 
             <div className="flex gap-4 pt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
               <a
-                href="https://github.com/D-Honoured1"
+                href={profileData.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-accent transition-all duration-300 hover:scale-110"
@@ -128,7 +128,7 @@ export function Hero() {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com/in/D-Honoured1"
+                href={profileData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-accent transition-all duration-300 hover:scale-110"
@@ -137,7 +137,7 @@ export function Hero() {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="mailto:temifeausten@gmail.com"
+                href={`mailto:${profileData.email}`}
                 className="text-muted-foreground hover:text-accent transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
