@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react"
+import profileData from "@/data/profile.json"
 
 export function Footer() {
   return (
@@ -7,13 +8,13 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
           <div className="text-center sm:text-left">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Daniel Austen. All rights reserved.
+              © {new Date().getFullYear()} {profileData.name}. All rights reserved.
             </p>
           </div>
 
           <div className="flex gap-6">
             <a
-              href="https://github.com/D-Honoured1"
+              href={profileData.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
@@ -22,7 +23,7 @@ export function Footer() {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/D-Honoured1"
+              href={profileData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
@@ -31,7 +32,7 @@ export function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:temifeausten@gmail.com"
+              href={`mailto:${profileData.email}`}
               className="text-muted-foreground hover:text-accent transition-colors"
               aria-label="Email"
             >
