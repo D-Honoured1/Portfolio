@@ -1,37 +1,57 @@
 {
   "techStack": [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "JavaScript",
     "Node.js",
+    "React",
+    "Next.js",
+    "TypeScript",
     "PostgreSQL",
-    "Supabase",
-    "Tailwind CSS"
+    "Docker",
+    "AWS",
+    "CI/CD"
   ],
   "categories": {
-    "Frontend": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "Radix UI"
-    ],
     "Backend": [
       "Node.js",
-      "Express",
-      "Supabase",
-      "PostgreSQL",
-      "Prisma"
+      "Express.js",
+      "RESTful APIs",
+      "GraphQL",
+      "Microservices",
+      "JWT",
+      "OAuth"
     ],
-    "Tools & Others": [
-      "Git",
+    "Frontend": [
+      "React",
+      "Next.js 14",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Server-Side Rendering"
+    ],
+    "Database": [
+      "PostgreSQL",
+      "Prisma ORM",
+      "Query Optimization",
+      "Schema Design",
+      "Indexing"
+    ],
+    "DevOps & Cloud": [
+      "Docker",
+      "GitHub Actions",
+      "CI/CD",
+      "AWS (EC2, Lambda, S3)",
       "Vercel",
-      "Stripe",
-      "Paystack",
-      "Authentication",
-      "REST APIs"
+      "Serverless"
+    ],
+    "System Admin": [
+      "Linux/Unix",
+      "Network Configuration",
+      "Security Protocols",
+      "Bash scripting"
+    ],
+    "Tools": [
+      "Git/GitHub",
+      "Stripe/Paystack",
+      "Monitoring & Logging",
+      "Agile/Scrum"
     ]
   }
 }

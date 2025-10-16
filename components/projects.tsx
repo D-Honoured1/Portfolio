@@ -160,13 +160,13 @@ export function Projects() {
             {/* Carousel Container */}
             <div
               ref={carouselRef}
-              className="overflow-hidden px-4 md:px-0"
+              className="overflow-hidden"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             >
               <div
-                className={`flex gap-4 md:gap-8 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+                className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
                 style={{
                   transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
                 }}
@@ -174,11 +174,11 @@ export function Projects() {
                 {infiniteProjects.map((project, index) => (
                   <div
                     key={`${project.title}-${index}`}
-                    className={`flex-shrink-0 transition-all duration-700 ${
+                    className={`flex-shrink-0 px-2 md:px-4 transition-all duration-700 ${
                       isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
                     style={{
-                      width: `calc(${100 / itemsPerView}% - ${((itemsPerView - 1) * 32) / itemsPerView}px)`,
+                      width: `${100 / itemsPerView}%`,
                       transitionDelay: `${200 + (index % projects.length) * 150}ms`,
                     }}
                   >

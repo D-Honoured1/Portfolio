@@ -1,15 +1,18 @@
 {
-  "name": "Daniel Austen",
-  "title": "Full-Stack Developer",
-  "summary": "Full-Stack Developer specializing in React, Next.js, and Node.js. Building scalable web applications with modern technologies.",
-  "bio": "I'm passionate about building scalable, production-ready web applications that solve real-world problems. Currently seeking full-time opportunities to contribute to innovative teams and create impactful software solutions.",
-  "about": "I'm a full-stack developer with a passion for building scalable web applications. My experience spans full-stack development, from crafting intuitive user interfaces to designing robust backend systems. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality software solutions.",
+  "name": "Daniel (Laye) Austen",
+  "title": "Full-Stack Software Engineer",
+  "summary": "Software Engineer with 6+ years building and deploying production systems serving active users. Expertise in full-stack development, backend architecture, and cloud infrastructure.",
+  "bio": "Software Engineer with 6+ years building and deploying production systems serving active users. Proven track record designing scalable systems, optimizing database performance, and implementing CI/CD pipelines across AWS, Vercel, and other cloud platforms.",
+  "about": "Software Engineer with 6+ years building and deploying production systems serving active users. Expertise in full-stack development, backend architecture, and cloud infrastructure. Proven track record designing scalable systems, optimizing database performance, and implementing CI/CD pipelines across AWS, Vercel, and other cloud platforms.",
   "image": "/Kami.jpeg",
   "email": "temifeausten@gmail.com",
+  "phone": "+234 803 639 2157",
+  "website": "https://daniel-austen.vercel.app",
   "github": "https://github.com/D-Honoured1",
-  "linkedin": "https://linkedin.com/in/D-Honoured1",
+  "linkedin": "https://linkedin.com/in/d-honoured1",
+  "location": "Lagos, Nigeria",
   "availability": {
     "status": "Open to opportunities",
-    "message": "I'm currently open to full-time opportunities and freelance projects. Feel free to reach out if you'd like to collaborate or just want to connect!"
+    "message": "I'm currently open to full-time opportunities and relocation. Feel free to reach out if you'd like to collaborate or just want to connect!"
   }
 }
