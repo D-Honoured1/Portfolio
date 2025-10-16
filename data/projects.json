@@ -5,7 +5,7 @@
     "image": "/modern-ecommerce-interface.png",
     "tech": ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Paystack", "Tailwind CSS"],
     "github": "https://github.com/D-honoured1/Kamistyles",
-    "demo": "https://kamistyles.vercel.app"
+    "demo": "https://kami-styles.vercel.app"
   },
   {
     "title": "Drive Clone – Cloud Storage System",
