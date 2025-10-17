@@ -51,7 +51,7 @@ export function Navigation() {
               aria-label="Toggle theme"
               className="hover:bg-accent/10 hover:text-accent transition-all duration-300 hover:rotate-180"
             >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {theme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
             </Button>
 
             <Button
