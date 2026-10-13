@@ -1,4 +1,19 @@
-[
+[{
+    "title": "RUNACOS Platform",
+    "description": "Website for the Faculty of Computing and Digital Technologies, Redeemers University. Developed a responsive and accessible web application with dynamic content management. Implemented server-side rendering for improved SEO and performance. Integrated PostgreSQL database for content storage and retrieval, ensuring data integrity and security.",
+    "image": "/runacos-website.png",
+    "tech": ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Paystack", "Tailwind CSS"],
+    "github": "https://github.com/D-honoured1/RUNACOS",
+    "demo": "https://runacos-win.vercel.app"
+  },
+   {
+    "title": "Kamisoft Platform",
+    "description": "Architected SaaS platform with microservices backend achieving 99.9% uptime. Optimized database schemas reducing query response times by 40%. Implemented CI/CD pipelines using GitHub Actions for automated testing and deployment. Configured serverless functions for event-driven workflows and background processing tasks.",
+    "image": "/modern-saas-dashboard.png",
+    "tech": ["Next.js", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Docker", "CI/CD"],
+    "github": "https://github.com/D-honoured1/Kamisoft",
+    "demo": "https://kamisoft.net"
+  },
   {
     "title": "Kamistyles E-Commerce Platform",
     "description": "Full-stack e-commerce application with complete shopping and payment experience. Built product management system handling 200+ products with advanced search, filtering, and sorting capabilities. Integrated Stripe and Paystack payment processing with webhook handlers for automated order confirmation. Optimized for performance with server-side rendering achieving 95+ Lighthouse score.",
@@ -22,13 +37,5 @@
     "tech": ["Remix", "React", "TypeScript", "Prisma", "PostgreSQL", "Supabase Auth"],
     "github": "https://github.com/D-Honoured1/CMS",
     "demo": "https://cms-flax-sigma.vercel.app"
-  },
-  {
-    "title": "Kamisoft SaaS Platform",
-    "description": "Architected SaaS platform with microservices backend achieving 99.9% uptime. Optimized database schemas reducing query response times by 40%. Implemented CI/CD pipelines using GitHub Actions for automated testing and deployment. Configured serverless functions for event-driven workflows and background processing tasks.",
-    "image": "/modern-saas-dashboard.png",
-    "tech": ["Next.js", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Docker", "CI/CD"],
-    "github": "https://github.com/D-honoured1/Kamisoft",
-    "demo": "https://kamisoftenterprises.online"
   }
 ]
